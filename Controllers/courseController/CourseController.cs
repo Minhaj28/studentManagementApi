@@ -136,7 +136,9 @@ namespace studentManagementApi.Controllers.courseController
                 }
 
                 // Delete related records if needed (e.g., enrolled students or associated data)
+                _courseService.DeleteAssignedTeacherByCourseId(id);
                 _courseService.DeleteStudentEnrollmentByCourseId(id);
+                _courseService.DeleteExamByCourseId(id);
                 _courseService.DeleteCourse(id);
 
                 // Return a success message with 200 OK
